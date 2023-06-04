@@ -1,7 +1,8 @@
 import java.util.UUID;
 
 public class Usuario {
-    private String nome, cpf, email, senha, saldo;
+    private String nome, cpf, email, senha;
+    private double saldo;
     private UUID id;
 
     public Usuario(String nome, String cpf, String email, String senha) {
@@ -30,10 +31,17 @@ public class Usuario {
     public void criarConta(){
         Conta conta1 = new Conta();
         this.id = conta1.getId();
-
+        this.saldo = conta1.getSaldo();
     }
 
     public UUID getId(){
         return this.id;
+    }
+    public Double getSaldo(){
+        return this.saldo;
+    }
+
+    public void setSaldo(double valor){
+        this.saldo += valor;
     }
 }
