@@ -8,5 +8,19 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
 }
