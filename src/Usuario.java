@@ -23,4 +23,8 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
+
+    public void criarConta(){
+        Conta conta1 = new Conta();
+    }
 }

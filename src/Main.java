@@ -11,9 +11,12 @@ public class Main {
                 
                 (0) - Sair
                 (1) - Registrar usuário
+                (2) - Criar conta
                 """);
         System.out.print("Digite o serviço desejado: ");
         int opcaoSelecionada = Integer.parseInt(input.nextLine());
+
+        Usuario usuario1 = null;
 
         while(opcaoSelecionada!=0) {
 
@@ -33,11 +36,21 @@ public class Main {
                 System.out.print("Digite a senha: ");
                 String senha = input.nextLine();
 
-                Usuario usuario1 = new Usuario(nome, cpf, email, senha);
+                usuario1 = new Usuario(nome, cpf, email, senha);
                 System.out.println("Usuário "+usuario1.getNome()+" criado com sucesso!");
                 break;
 
+                case 2:
+                    if(usuario1 != null) {
+                        usuario1.criarConta();
+                        System.out.println("Conta criada");
+                    }else {
+                        System.out.println("ERRO...");
+                    }
+                    break;
             }
+            System.out.println("Digite o serviço desejado: ");
+            opcaoSelecionada = Integer.parseInt(input.nextLine());
 
 
         }
