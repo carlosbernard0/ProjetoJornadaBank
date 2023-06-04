@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,6 +45,7 @@ public class Main {
                     if(usuario1 != null) {
                         usuario1.criarConta();
                         System.out.println("Conta criada");
+                        System.out.println("O id é: " + usuario1.getId());
                     }else {
                         System.out.println("ERRO...");
                     }
