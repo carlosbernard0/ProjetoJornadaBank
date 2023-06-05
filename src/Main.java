@@ -123,13 +123,13 @@ public class Main {
                     break;
                 case 5:
 
-                    System.out.print("Qual o seu Id?: ");
+                    System.out.print("-- Qual o seu Id?: ");
                     selectedId = Integer.parseInt(input.nextLine());
 
-                    System.out.print("Digite o id da conta a ser transferido: ");
+                    System.out.print("-- Digite o id da conta a ser transferido: ");
                     int idTransferencia = Integer.parseInt(input.nextLine());
 
-                    System.out.print("Digite o valor a ser enviado: ");
+                    System.out.print("-- Digite o valor a ser enviado: ");
                     double valorTransferido = Double.parseDouble(input.nextLine());
 
                     if(valorTransferido > 0 && valorTransferido <= contaSaldo[selectedId]){
@@ -143,7 +143,7 @@ public class Main {
 
                     break;
                 case 6:
-                    System.out.print("Digite o seu Id: ");
+                    System.out.print("-- Digite o seu Id: ");
                     selectedId = Integer.parseInt(input.nextLine());
 
                     System.out.println("\n--- Saldo: " + contaSaldo[selectedId]);
