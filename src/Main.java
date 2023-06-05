@@ -56,27 +56,30 @@ public class Main {
 
                 case 2:
                    // Criação da conta
-
-                    for(int i=0;i<5;i++){
-                        contaId[i] = i;
-                        contaSaldo[i] = 0.0;
-                        System.out.println("--- Conta criada com sucesso => Id: " + contaId[i] + ", Saldo: " + contaSaldo[i]);
+                    if(usuariosNome[1] != null){
+                        for(int i=0;i<3;i++){
+                            contaId[i] = i;
+                            contaSaldo[i] = 0.0;
+                            System.out.println("--- Conta criada com sucesso => Id: " + contaId[i] + ", Saldo: " + contaSaldo[i]);
+                        }
+                    }else {
+                        System.out.println("--- ERRO --- Usuario não registrado!");
                     }
 
                     break;
-//                case 3:
-//                    //Deposito na conta
-//                    System.out.print("-- Digite o valor a ser depositado: ");
-//                    double valorDepositado = Double.parseDouble(input.nextLine());
-//
-//                    if(valorDepositado <= 0.0){
-//                        System.out.println("--- ERRO: VALOR INVALIDO");
-//                    }else {
-//                        System.out.println("--- Depósito realizado com sucesso!");
-//                        usuario1.addSaldo(valorDepositado);
-//                        System.out.println("Saldo da conta: " + usuario1.getSaldo());
-//                    }
-//                    break;
+                case 3:
+                    //Deposito na conta
+                    System.out.print("Digite o Id: ");
+                    int idEscolhido = Integer.parseInt(input.nextLine());
+
+                    System.out.print("Digite o valor do deposito: ");
+                    contaSaldo[idEscolhido] += Double.parseDouble(input.nextLine());
+
+                    System.out.println("Deposito concluido com sucesso!");
+                    System.out.println("Saldo: "+ contaSaldo[idEscolhido]);
+
+
+                    break;
 //                case 4:
 //                    //Sacando valor da conta
 //                    System.out.print("Digite o valor que deseja sacar: ");
