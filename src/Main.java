@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +14,7 @@ public class Main {
                 (1) - Registrar usuário
                 (2) - Criar conta
                 (3) - Fazer depósito
+                (4) - Realizar saque
                 
                 """);
         System.out.print("-- Digite o serviço desejado: ");
@@ -45,6 +45,7 @@ public class Main {
                 break;
 
                 case 2:
+                    //Criação de conta
                     if(usuario1 != null) {
                         usuario1.criarConta();
                         System.out.println("\nConta criada");
@@ -55,6 +56,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                    //Deposito na conta
                     System.out.print("-- Digite o valor a ser depositado: ");
                     double valorDepositado = Double.parseDouble(input.nextLine());
 
@@ -62,9 +64,24 @@ public class Main {
                         System.out.println("--- ERRO: VALOR INVALIDO");
                     }else {
                         System.out.println("--- Depósito realizado com sucesso!");
-                        usuario1.setSaldo(valorDepositado);
+                        usuario1.addSaldo(valorDepositado);
                         System.out.println("Saldo da conta: " + usuario1.getSaldo());
                     }
+                    break;
+                case 4:
+                    //Sacando valor da conta
+                    System.out.print("Digite o valor que deseja sacar: ");
+                    double valorSacado = Double.parseDouble(input.nextLine());
+
+                    if(valorSacado> usuario1.getSaldo()){
+                        System.out.println("ERRO! SALDO INSUFICIENTE");
+                    } else if (valorSacado<= usuario1.getSaldo() && valorSacado>0) {
+                        usuario1.removeSaldo(valorSacado);
+                        System.out.println("Operação realizada com sucesso!");
+                    }else {
+                        System.out.println("ERRO!");
+                    }
+                    break;
             }
             System.out.print("\n-- Digite o serviço desejado: ");
             opcaoSelecionada = Integer.parseInt(input.nextLine());

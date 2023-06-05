@@ -41,7 +41,10 @@ public class Usuario {
         return this.saldo;
     }
 
-    public void setSaldo(double valor){
+    public void addSaldo(double valor){
         this.saldo += valor;
+    }
+    public void removeSaldo(double valor){
+        this.saldo -= valor;
     }
 }
