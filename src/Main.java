@@ -78,7 +78,7 @@ public class Main {
                     System.out.print("-- Digite o seu Id: ");
                     selectedId = Integer.parseInt(input.nextLine());
 
-                    if(selectedId < 0 && selectedId>3){
+                    if(selectedId < 0 || selectedId>3){
 
                         System.out.println("--- ERRO: Id invalido!");
 
