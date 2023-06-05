@@ -68,7 +68,7 @@ public class Main {
                             System.out.println("\n--- Conta criada com sucesso => Id: " + contaId[i] + ", Saldo: " + contaSaldo[i]);
                         }
                     } else {
-                        System.out.println("--- ERRO: Usuario não registrado!");
+                        System.out.println("\n--- ERRO: Usuario não registrado!");
                     }
 
                     break;
@@ -80,7 +80,7 @@ public class Main {
 
                     if(selectedId < 0 || selectedId>3){
 
-                        System.out.println("--- ERRO: Id invalido!");
+                        System.out.println("\n--- ERRO: Id invalido!");
 
                     }else {
 
@@ -93,7 +93,7 @@ public class Main {
                             System.out.println("--- Deposito concluido com sucesso!");
                             System.out.println("--- Saldo: " + contaSaldo[selectedId]);
                         } else {
-                            System.out.println("--- ERRO: Valor invalido!");
+                            System.out.println("\n--- ERRO: Valor invalido!");
                         }
                     }
                     break;
@@ -104,7 +104,7 @@ public class Main {
 
                     if(selectedId < 0 || selectedId>3){
 
-                        System.out.println("--- ERRO: Id invalido!");
+                        System.out.println("\n--- ERRO: Id invalido!");
 
                     }else {
 
@@ -115,7 +115,7 @@ public class Main {
                             contaSaldo[selectedId] -= valorSaque;
                             System.out.println("--- Saque concluido com sucesso!");
                         } else {
-                            System.out.println("--- ERRO: Saldo insuficiente");
+                            System.out.println("\n--- ERRO: Saldo insuficiente");
                         }
 
                         System.out.println("--- Saldo: " + contaSaldo[selectedId]);
@@ -138,7 +138,7 @@ public class Main {
                         System.out.println("\n--- Transferência realizada com sucesso!");
                         System.out.println("--- Saldo: " + contaSaldo[selectedId]);
                     }else{
-                        System.out.println("--- ERRO: Valor insuficiente OU id inválido!");
+                        System.out.println("\n--- ERRO: Valor insuficiente OU id inválido!");
                     }
 
                     break;
