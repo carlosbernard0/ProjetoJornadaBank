@@ -28,6 +28,8 @@ public class Main {
                     (2) - Criar conta
                     (3) - Fazer depósito
                     (4) - Realizar saque
+                    (5) - Transferir dinheiro
+                    (6) - Ver saldo
                                     
                     """);
             System.out.print("-- Digite o serviço desejado: ");
@@ -76,37 +78,75 @@ public class Main {
                     System.out.print("-- Digite o seu Id: ");
                     selectedId = Integer.parseInt(input.nextLine());
 
-                    System.out.print("-- Digite o valor do deposito: ");
-                    double valorDeposito = Double.parseDouble(input.nextLine());
+                    if(selectedId < 0 && selectedId>3){
 
-                    if (valorDeposito > 0) {
-                        contaSaldo[selectedId] += valorDeposito;
+                        System.out.println("--- ERRO: Id invalido!");
 
-                        System.out.println("--- Deposito concluido com sucesso!");
-                        System.out.println("--- Saldo: " + contaSaldo[selectedId]);
-                    } else {
-                        System.out.println("--- ERRO: Valor invalido!");
+                    }else {
+
+                        System.out.print("-- Digite o valor do deposito: ");
+                        double valorDeposito = Double.parseDouble(input.nextLine());
+
+                        if (valorDeposito > 0) {
+                            contaSaldo[selectedId] += valorDeposito;
+
+                            System.out.println("--- Deposito concluido com sucesso!");
+                            System.out.println("--- Saldo: " + contaSaldo[selectedId]);
+                        } else {
+                            System.out.println("--- ERRO: Valor invalido!");
+                        }
                     }
-
                     break;
                 case 4:
                     //Sacando da conta
-
                     System.out.print("\n-- Digite o seu Id: ");
                     selectedId = Integer.parseInt(input.nextLine());
 
-                    System.out.print("-- Digite o valor a ser sacado: ");
-                    double valorSaque = Double.parseDouble(input.nextLine());
+                    if(selectedId < 0 && selectedId>3){
 
-                    if (valorSaque > 0 && valorSaque <= contaSaldo[selectedId]) {
-                        contaSaldo[selectedId] -= valorSaque;
-                        System.out.println("--- Saque concluido com sucesso!");
-                    } else {
-                        System.out.println("--- ERRO: Saldo insuficiente");
+                        System.out.println("--- ERRO: Id invalido!");
+
+                    }else {
+
+                        System.out.print("-- Digite o valor a ser sacado: ");
+                        double valorSaque = Double.parseDouble(input.nextLine());
+
+                        if (valorSaque > 0 && valorSaque <= contaSaldo[selectedId]) {
+                            contaSaldo[selectedId] -= valorSaque;
+                            System.out.println("--- Saque concluido com sucesso!");
+                        } else {
+                            System.out.println("--- ERRO: Saldo insuficiente");
+                        }
+
+                        System.out.println("--- Saldo: " + contaSaldo[selectedId]);
+                    }
+                    break;
+                case 5:
+
+                    System.out.print("Qual o seu Id?: ");
+                    selectedId = Integer.parseInt(input.nextLine());
+
+                    System.out.print("Digite o id da conta a ser transferido: ");
+                    int idTransferencia = Integer.parseInt(input.nextLine());
+
+                    System.out.print("Digite o valor a ser enviado: ");
+                    double valorTransferido = Double.parseDouble(input.nextLine());
+
+                    if(valorTransferido > 0 && valorTransferido <= contaSaldo[selectedId]){
+                        contaSaldo[idTransferencia] += valorTransferido;
+                        contaSaldo[selectedId] -= valorTransferido;
+                        System.out.println("\n--- Transferência realizada com sucesso!");
+                        System.out.println("--- Saldo: " + contaSaldo[selectedId]);
+                    }else{
+                        System.out.println("--- ERRO: Valor insuficiente OU id inválido!");
                     }
 
-                    System.out.println("--- Saldo: " + contaSaldo[selectedId]);
                     break;
+                case 6:
+                    System.out.print("Digite o seu Id: ");
+                    selectedId = Integer.parseInt(input.nextLine());
+
+                    System.out.println("\n--- Saldo: " + contaSaldo[selectedId]);
             }
 
         } while (opcaoSelecionada != 0);
