@@ -10,6 +10,9 @@ public class Main {
         String[] usuariosEmail = new String[5];
         String[] usuariosSenha = new String[5];
 
+        int[] contaId = new int[5];
+        double[] contaSaldo = new double[5];
+
 
 
         System.out.println("--- Bem vindo ao JornadaBank ---");
@@ -34,11 +37,7 @@ public class Main {
 
                 case 1:
                     // Registrar usuario
-
-                    System.out.print("Quantos usuários você deseja adicionar?: ");
-                    int aux = Integer.parseInt(input.nextLine());
-
-                    for(int i=0;i<aux;i++) {
+                    for(int i=0;i<5;i++) {
                         System.out.print("-- Digite o nome: ");
                         usuariosNome[i] = input.nextLine();
 
@@ -53,20 +52,18 @@ public class Main {
 
                         System.out.println("--- Usuário " + usuariosNome[i] + " criado com sucesso!");
                     }
+                    break;
+
+                case 2:
+                   // Criação da conta
+
+                    for(int i=0;i<5;i++){
+                        contaId[i] = i;
+                        contaSaldo[i] = 0.0;
+                        System.out.println("--- Conta criada com sucesso => Id: " + contaId[i] + ", Saldo: " + contaSaldo[i]);
+                    }
 
                     break;
-//
-//                case 2:
-//                    //Criação de conta
-//                    if(usuario1 != null) {
-//                        usuario1.criarConta();
-//                        System.out.println("\nConta criada");
-//                        System.out.println("Id da conta: " + usuario1.getId());
-//                        System.out.println("Saldo da conta: "+usuario1.getSaldo());
-//                    }else {
-//                        System.out.println("--- ERRO...");
-//                    }
-//                    break;
 //                case 3:
 //                    //Deposito na conta
 //                    System.out.print("-- Digite o valor a ser depositado: ");
