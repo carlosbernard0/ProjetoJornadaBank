@@ -5,7 +5,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String[] usuarios = new String[5];
+        String[] usuarioNome = new String[5];
+        String[] usuariosCpf = new String[5];
+        String[] usuariosEmail = new String[5];
+        String[] usuariosSenha = new String[5];
+
+
 
 
         System.out.println("--- Bem vindo ao JornadaBank ---");
@@ -31,7 +36,9 @@ public class Main {
                 case 1:
                 // Registrar usuario
                 System.out.print("-- Digite o nome: ");
-                String nome = input.nextLine();
+                String[] usuarioNome = new String[5];
+                String usuarioNome = input.nextLine();
+
 
                 System.out.print("-- Digite o CPF: ");
                 String cpf = input.nextLine();
@@ -92,6 +99,7 @@ public class Main {
         }
 
     }
+    public static String registrarUsuario(){
 
 
-}
+    }
