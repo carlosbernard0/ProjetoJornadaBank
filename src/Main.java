@@ -5,11 +5,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String[] usuarioNome = new String[5];
+        String[] usuariosNome = new String[5];
         String[] usuariosCpf = new String[5];
         String[] usuariosEmail = new String[5];
         String[] usuariosSenha = new String[5];
-
 
 
 
@@ -34,24 +33,28 @@ public class Main {
             switch (opcaoSelecionada) {
 
                 case 1:
-                // Registrar usuario
-                System.out.print("-- Digite o nome: ");
-                String[] usuarioNome = new String[5];
-                String usuarioNome = input.nextLine();
+                    // Registrar usuario
 
+                    System.out.print("Quantos usuários você deseja adicionar?: ");
+                    int aux = Integer.parseInt(input.nextLine());
 
-                System.out.print("-- Digite o CPF: ");
-                String cpf = input.nextLine();
+                    for(int i=0;i<aux;i++) {
+                        System.out.print("-- Digite o nome: ");
+                        usuariosNome[i] = input.nextLine();
 
-                System.out.print("-- Digite o email: ");
-                String email = input.nextLine();
+                        System.out.print("-- Digite o CPF: ");
+                        usuariosCpf[i] = input.nextLine();
 
-                System.out.print("-- Digite a senha: ");
-                String senha = input.nextLine();
+                        System.out.print("-- Digite o email: ");
+                        usuariosEmail[i] = input.nextLine();
 
-                usuario1 = new Usuario(nome, cpf, email, senha);
-                System.out.println("--- Usuário "+usuario1.getNome()+" criado com sucesso!");
-                break;
+                        System.out.print("-- Digite a senha: ");
+                        usuariosSenha[i] = input.nextLine();
+
+                        System.out.println("--- Usuário " + usuariosNome[i] + " criado com sucesso!");
+                    }
+
+                    break;
 //
 //                case 2:
 //                    //Criação de conta
@@ -99,7 +102,8 @@ public class Main {
         }
 
     }
-    public static String registrarUsuario(){
-
-
-    }
+//    public static String registrarUsuario(){
+//
+//
+//    }
+}
