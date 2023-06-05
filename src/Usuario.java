@@ -1,9 +1,8 @@
-import java.util.UUID;
+
 
 public class Usuario {
     private String nome, cpf, email, senha;
     private double saldo;
-    private UUID id;
 
     public Usuario(String nome, String cpf, String email, String senha) {
         this.nome = nome;
